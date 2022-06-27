@@ -11,21 +11,20 @@ const VALID_W3C_CAPS = ['platformName', 'browserName', 'browserVersion', 'accept
 
 // Attributes on nodes that we know are unique to the node
 const UNIQUE_XPATH_ATTRIBUTES = [
-  'name',
-  'content-desc',
-  'id',
-  'accessibility-id',
+  'objectName',
+  'text',
+  'className',
 ];
 const UNIQUE_CLASS_CHAIN_ATTRIBUTES = [
   'label',
-  'name',
-  'value',
+  'text',
+  'title',
 ];
 const UNIQUE_PREDICATE_ATTRIBUTES = [
   'label',
+  'text',
+  'title',
   'name',
-  'value',
-  'type',
 ];
 
 /**

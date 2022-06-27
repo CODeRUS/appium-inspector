@@ -48,16 +48,10 @@ ${this.indent(code, 4)}
 
   codeFor_findAndAssign (strategy, locator/*, localVar, isArray*/) {
     let suffixMap = {
+      'objectName': 'objectName',
+      'text': 'text',
+      'className': 'className',
       xpath: 'xpath',
-      'accessibility id': 'accessibility_id',
-      'id': 'id',
-      'name': 'name', // TODO: How does Python use name selector
-      'class name': 'class_name',
-      '-android uiautomator': 'unsupported',
-      '-android datamatcher': 'unsupported',
-      '-android viewtag': 'unsupported',
-      '-ios predicate string': 'ios_predicate',
-      '-ios class chain': 'ios_uiautomation', // TODO: Could not find iOS UIAutomation
     };
     if (!suffixMap[strategy]) {
       throw new Error(`Strategy ${strategy} can't be code-gened`);

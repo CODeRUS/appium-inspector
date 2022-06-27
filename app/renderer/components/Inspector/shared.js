@@ -29,11 +29,9 @@ export function isUnique (attrName, attrValue, sourceXML) {
 
 // Map of the optimal strategies.
 const STRATEGY_MAPPINGS = [
-  ['name', 'accessibility id'],
-  ['content-desc', 'accessibility id'],
-  ['id', 'id'],
-  ['rntestid', 'id'],
-  ['resource-id', 'id'],
+  ['objectName', 'objectName'],
+  ['text', 'text'],
+  ['className', 'className'],
 ];
 
 export function getLocators (attributes, sourceXML) {

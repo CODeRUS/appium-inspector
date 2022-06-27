@@ -32,16 +32,10 @@ driver.quit`;
 
   codeFor_findAndAssign (strategy, locator, localVar, isArray) {
     let suffixMap = {
-      'xpath': ':xpath',
-      'accessibility id': ':accessibility_id',
-      'id': ':id',
-      'name': ':name',
-      'class name': ':class_name',
-      '-android uiautomator': ':uiautomation',
-      '-android datamatcher': ':datamatcher',
-      '-android viewtag': ':viewtag',
-      '-ios predicate string': ':predicate',
-      '-ios class chain': ':class_chain',
+      'objectName': 'objectName',
+      'text': 'text',
+      'className': 'className',
+      xpath: 'xpath',
     };
     if (!suffixMap[strategy]) {
       throw new Error(`Strategy ${strategy} can't be code-gened`);

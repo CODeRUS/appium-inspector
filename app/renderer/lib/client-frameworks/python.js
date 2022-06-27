@@ -43,24 +43,18 @@ driver.quit()`;
 
   codeFor_findAndAssign (strategy, locator, localVar, isArray) {
     let suffixMap = {
-      xpath: 'AppiumBy.CLASS_NAME',
-      'accessibility id': 'AppiumBy.ACCESSIBILITY_ID',
-      'id': 'AppiumBy.ID',
-      'name': 'AppiumBy.NAME',
-      'class name': 'AppiumBy.CLASS_NAME',
-      '-android uiautomator': 'AppiumBy.ANDROID_UIAUTOMATOR',
-      '-android datamatcher': 'AppiumBy.ANDROID_DATA_MATCHER',
-      '-android viewtag': 'AppiumBy.ANDROID_VIEWTAG',
-      '-ios predicate string': 'AppiumBy.IOS_PREDICATE',
-      '-ios class chain': 'AppiumBy.IOS_CLASS_CHAI',
+      'objectName': 'objectName',
+      'text': 'text',
+      'className': 'className',
+      xpath: 'xpath',
     };
     if (!suffixMap[strategy]) {
       throw new Error(`Strategy ${strategy} can't be code-gened`);
     }
     if (isArray) {
-      return `${localVar} = driver.find_elements(by=${suffixMap[strategy]}, value=${JSON.stringify(locator)})`;
+      return `${localVar} = driver.find_elements("${suffixMap[strategy]}", ${JSON.stringify(locator)})`;
     } else {
-      return `${localVar} = driver.find_element(by=${suffixMap[strategy]}, value=${JSON.stringify(locator)})`;
+      return `${localVar} = driver.find_element("${suffixMap[strategy]}", ${JSON.stringify(locator)})`;
     }
   }
 

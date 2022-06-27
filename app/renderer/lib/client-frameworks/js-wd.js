@@ -33,16 +33,10 @@ main().catch(console.log);
 
   codeFor_findAndAssign (strategy, locator, localVar, isArray) {
     let suffixMap = {
-      xpath: 'XPath',
-      'accessibility id': 'AccessibilityId',
-      'id': 'Id',
-      'name': 'Name',
-      'class name': 'ClassName',
-      '-android uiautomator': 'AndroidUIAutomator',
-      '-android datamatcher': 'AndroidDataMatcher',
-      '-android viewtag': 'unsupported',
-      '-ios predicate string': 'IosUIAutomation',
-      '-ios class chain': 'IosClassChain',
+      'objectName': 'objectName',
+      'text': 'text',
+      'className': 'className',
+      xpath: 'xpath',
     };
     if (!suffixMap[strategy]) {
       throw new Error(`Strategy ${strategy} can't be code-gened`);
